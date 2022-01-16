@@ -14,6 +14,7 @@ class UserController extends Controller
     {
         $skip = ($request->has('skip')) ? $request->skip : 0;
         $users = new User();
+        // search by name of user
         if ($request->has('q')) {
             $users = $users->where('name','LIKE', "%{$request->q}%");
         }
